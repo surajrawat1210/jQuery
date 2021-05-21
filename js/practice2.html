@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+#box{
+  border:1px solid black;
+  padding:20px;
+}
+
+</style>
+</head>
+<body>
+
+<h1>JQuery Selector</h1>
+<div id="box">
+  <h2>text box</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, consequatur ab earum dicta culpa sint officiis facilis accusantium quasi. Quaerat animi voluptate, non minima inventore aliquid pariatur! Veritatis, quae, quod.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum nisi inventore praesentium, dolore placeat omnis! Obcaecati iure eos sit iste, blanditiis neque necessitatibus, eius molestiae recusandae, sed laboriosam ducimus mollitia.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, qui totam possimus!</p>
+  <h4 class="more">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, voluptates!</h4>
+  <h4 class="more">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, voluptates!</h4>
+  <h4 class="more">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, voluptates!</h4>
+  Name<input type="text" class="name" value="rawat">
+</div>
+<div id="di"><h1>hello this is suraj</h1></div>
+<button id="more">see more</button>
+<div class="first" style="width:100px;height:100px;background-color:blue;position:relative;"> hello </div>
+<div class="second"style="width:100px;height:100px;background-color:black;position:relative;"> suraj</div>
+<div class="third" style="width:100px;height:100px;background-color:pink;position:relative;"> rawat</div>
+
+<button type="button" name="button" class="yes"> click me</button>
+<button id="slide"> slide </button>
+<button id="animate">animate</button>
+<button type="button" id="ajax"> ajax</button>
+
+  <script>
+    $(document).ready(function(){
+
+      $(".yes").click(function(){
+
+      $(".first").fadeTo("slow",0.4);
+      $(".second").fadeTo("slow",0.5);
+      $(".third").fadeTo("slow",0.2);
+
+    });
+    $("#more").click(function(){
+      $("h4").toggle();
+    });
+  $("#slide").click(function(){
+    $(".first").animate({left:"250px",fontSize:"60px"},3000);
+    $(".second").animate({left:"250px"},"slow");
+    $(".third").animate({left:"250px"},"fast");
+
+  });
+  $("#animate").click(function(){
+// chaining
+    $(".first").animate({width:"250px"},3000).animate({height:"250px"},3000).animate({height:"100px"},3000).animate({width:"100px"},3000);
+
+  });
+  $(".first").text("suraj");
+  alert($(".first").text());
+  alert($(".name").val());
+  });
+  $('#ajax').click(function(){
+    $("#di").load("demo.txt");
+  });
+
+  </script>
+</body>
+</html>
